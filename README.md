@@ -37,7 +37,7 @@ Claude Code の会話ログ（`~/.claude/`）は Claude Code のものなので�
 
 tanacode は個人で作っているため、Apple の署名・公証は未取得。そのままでは、macOS がダウンロードしたアプリに付ける実行前の確認の印（quarantine 属性）のせいで、起動できません。
 
-そこでこの tap の cask は、インストールと更新のたびに、`tanacode.app` だけから quarantine 属性を外します（`xattr -dr com.apple.quarantine /Applications/tanacode.app`）。tanacode の README で zip から入れるときに案内しているコマンドと同じもの。この tap を信頼してインストールする場合に限った、意図的な回避です。
+そこでこの tap の cask は、インストールと更新のたびに、`tanacode.app` だけから quarantine 属性を外します（`xattr -drs com.apple.quarantine /Applications/tanacode.app`）。`-s` は、アプリの中のシンボリックリンク自身の属性まで外すためのもの（`-dr` だけだと、リンクの先だけから外れて、リンク自身には残ります）。tanacode の README で zip から入れるときに案内しているコマンドと同じ働きです。この tap を信頼してインストールする場合に限った、意図的な回避です。
 
 Homebrew は、ダウンロードしたファイルが cask に書いた SHA-256 と一致するかを確かめてから入れます。cask の SHA-256 は、tanacode のリリースの `SHA256SUMS.txt` と同じ値。
 
