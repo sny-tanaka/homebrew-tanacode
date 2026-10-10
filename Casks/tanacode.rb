@@ -2,9 +2,9 @@
 cask "tanacode" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.2.3"
-  sha256 arm:   "0758b4d64b30539dd1800c6c768d211c215ac79b65753b92b99bad77b7f4813c",
-         intel: "64fede6ffede749ff57ed51fd9db3f162c60eb09409119d28115fa634f184e75"
+  version "1.3.0"
+  sha256 arm:   "5e310ccdeda0b3a5089392afdfa3d67a215c83d66ffe6b4f2b3b553a48804f10",
+         intel: "18ee9e0f88edbdc378a8321ff864b0dafcd048198f586f068de64a5dd2cecd7b"
 
   url "https://github.com/sny-tanaka/tanacode/releases/download/v#{version}/tanacode-#{version}-mac-#{arch}.zip"
   name "tanacode"
